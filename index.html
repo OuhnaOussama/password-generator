@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+  <title>Frontend Mentor | Password generator app</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="body">
+  <section class="section-generator">
+    <div class="container">
+      <div class="title">
+        <h1 class="app-name">Password Generator</h1>
+      </div>
+      <div class="password">
+        <textarea class="text-password" id="text-password" readonly>P4$5W0rD!</textarea>
+        <div class="copied">
+          <span class="text-copied"></span>
+          <button class="btn-copy" type="button">
+            <svg class="icon-copy" width="21" height="24">
+              <use href="./assets/images/icons/symbol-defs.svg#icon-copy"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <form class="generator-form" onsubmit="generatePassword(event)">
+        <div class="selected-length">
+          <p class="text-length">Character Length</p>
+          <span class="number-length" id="character-length-display">4</span>
+        </div>
+        <label class="hidden" for="character-length">Character Length</label>
+        <input
+          class="input-length"
+          type="range"
+          name="character-length"
+          id="character-length"
+          value="4"
+          min="4"
+          max="20"
+          step="1"
+          oninput="updateCharacterLength(this.value)"
+        />
+
+        <div class="checkboxes">
+          <div class="checkbox">
+            <label for="uppercase">Include Uppercase Letters</label>
+            <input
+              class="input-check" id="uppercase" type="checkbox" name="options" value="uppercase"onclick="updatePassword()"
+            />
+          </div>
+          <div class="checkbox">
+            <label for="lowercase">Include Lowercase Letters</label>
+            <input
+              class="input-check" id="lowercase" type="checkbox" name="options" value="lowercase" onclick="updatePassword()"
+            />
+          </div>
+          <div class="checkbox">
+            <label for="numbers">Include Numbers</label>
+            <input
+              class="input-check" id="numbers" type="checkbox" name="options" value="numbers" onclick="updatePassword()"
+            />
+          </div>
+          <div class="checkbox">
+            <label for="symbols">Include Symbols</label>
+            <input
+              class="input-check" id="symbols" type="checkbox" name="options" value="symbols" onclick="updatePassword()"
+            />
+          </div>
+        </div>
+        <button class="btn-generate" type="submit" >GENERATE  ➜ </button>
+
+        <p style="margin-top: 40px; margin-left: 190px;">BY OUHNA OUSSAMA   ©</p>
+      </form>
+    </div>
+  </section>
+  <script src="index.js" type="module"></script>
+</body>
+</html>
+

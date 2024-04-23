@@ -45,7 +45,7 @@ document.querySelector('input[type="range"]').addEventListener(
 
 document.querySelector("button.btn-generate").addEventListener( 
   "click", (e) => { 
-      e.preventDefault(); // Prevent form submission
+      e.preventDefault(); 
       generate();
   });
 
